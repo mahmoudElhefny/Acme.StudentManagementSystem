@@ -1,0 +1,9 @@
+﻿using Xunit;
+
+namespace Acme.StudentManagementSystem.EntityFrameworkCore;
+
+[CollectionDefinition(StudentManagementSystemTestConsts.CollectionDefinitionName)]
+public class StudentManagementSystemEntityFrameworkCoreCollection : ICollectionFixture<StudentManagementSystemEntityFrameworkCoreFixture>
+{
+
+}

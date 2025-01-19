@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Acme.StudentManagementSystem</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Acme.StudentManagementSystem.Domain\Acme.StudentManagementSystem.Domain.csproj" />
+    <ProjectReference Include="..\Acme.StudentManagementSystem.TestBase\Acme.StudentManagementSystem.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>
