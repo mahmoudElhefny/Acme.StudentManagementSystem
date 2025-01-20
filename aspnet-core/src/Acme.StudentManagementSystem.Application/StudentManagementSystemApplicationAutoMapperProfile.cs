@@ -11,7 +11,9 @@ public class StudentManagementSystemApplicationAutoMapperProfile : Profile
         /* You can configure your AutoMapper mapping configuration here.
          * Alternatively, you can split your mapping configurations
          * into multiple profile classes for a better organization. */
-        CreateMap<Student, StudentDto>().ReverseMap();
+        CreateMap<Student, StudentDto>()
+                .ForMember(dest => dest.GradeName, opt => opt.MapFrom(src => src.Grade.Name));
+        ;
         CreateMap<Student, StudentCreateUpdateDto>().ReverseMap();
 
     }

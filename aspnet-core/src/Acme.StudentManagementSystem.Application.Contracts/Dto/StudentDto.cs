@@ -9,6 +9,8 @@ namespace Acme.StudentManagementSystem.Dto
     {
         public string Name { get; set; }
         public int Age { get; set; }
-        public int GradeId { get; set; }
+        // public int GradeId { get; set; }
+        public string GradeName { get; set; } // Add this property
+
     }
 }

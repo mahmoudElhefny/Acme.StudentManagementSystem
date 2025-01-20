@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Entities;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace Acme.StudentManagementSystem.EntityFrameworkCore.Configurations
 {
@@ -15,6 +16,7 @@ namespace Acme.StudentManagementSystem.EntityFrameworkCore.Configurations
     {
         public void Configure(EntityTypeBuilder<Grade> builder)
         {
+            builder.ConfigureByConvention();
             builder.HasQueryFilter(g => !g.IsDeleted);
             builder.Property(g => g.Name).IsRequired().HasMaxLength(100);
             // Seed data for predefined grades for test purposes otherwise we end user can add grades

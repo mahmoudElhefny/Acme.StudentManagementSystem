@@ -1,5 +1,7 @@
 ﻿using Acme.StudentManagementSystem.Dto;
 using Acme.StudentManagementSystem.Students;
+using System.Linq;
+using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
@@ -18,6 +20,11 @@ namespace Acme.StudentManagementSystem.Services
         : base(repository)
         {
 
+        }
+        protected override async Task<IQueryable<Student>> CreateFilteredQueryAsync(PagedAndSortedResultRequestDto input)
+        {
+            return await Repository.WithDetailsAsync(student => student.Grade); // Use WithDetails
+           
         }
     }
 }

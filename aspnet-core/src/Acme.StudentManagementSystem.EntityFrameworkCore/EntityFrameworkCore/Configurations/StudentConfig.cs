@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Entities;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace Acme.StudentManagementSystem.EntityFrameworkCore.Configurations
 {
@@ -14,6 +15,7 @@ namespace Acme.StudentManagementSystem.EntityFrameworkCore.Configurations
     {
         public void Configure(EntityTypeBuilder<Student> builder)
         {
+            builder.ConfigureByConvention();
             builder.HasQueryFilter(s => !s.IsDeleted);
             builder.Property(s => s.Name).IsRequired().HasMaxLength(150);
             builder.Property(s => s.Age).IsRequired();
