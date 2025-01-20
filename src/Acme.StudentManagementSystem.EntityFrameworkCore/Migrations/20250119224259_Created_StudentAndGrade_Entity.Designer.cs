@@ -4,6 +4,7 @@ using Acme.StudentManagementSystem.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Acme.StudentManagementSystem.Migrations
 {
     [DbContext(typeof(StudentManagementSystemDbContext))]
-    partial class StudentManagementSystemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250119224259_Created_StudentAndGrade_Entity")]
+    partial class Created_StudentAndGrade_Entity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

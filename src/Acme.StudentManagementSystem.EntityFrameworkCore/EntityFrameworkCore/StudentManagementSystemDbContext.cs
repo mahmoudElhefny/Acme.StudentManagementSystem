@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Acme.StudentManagementSystem.EntityFrameworkCore.Configurations;
+using Acme.StudentManagementSystem.Grades;
+using Acme.StudentManagementSystem.Students;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -51,6 +55,10 @@ public class StudentManagementSystemDbContext :
     public DbSet<Tenant> Tenants { get; set; }
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
+
+    //student
+    public DbSet<Student> Students { get; set; }
+    public DbSet<Grade> Grades { get; set; }
     #endregion
 
     public StudentManagementSystemDbContext(DbContextOptions<StudentManagementSystemDbContext> options)
@@ -82,5 +90,8 @@ public class StudentManagementSystemDbContext :
         //    b.ConfigureByConvention(); //auto configure for the base class props
         //    //...
         //});
+        builder.ApplyConfiguration(new StudentConfig());    
+        builder.ApplyConfiguration(new GradeConfig());
+
     }
 }
