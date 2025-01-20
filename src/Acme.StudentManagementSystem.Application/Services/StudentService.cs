@@ -6,15 +6,15 @@ using Volo.Abp.Domain.Repositories;
 
 namespace Acme.StudentManagementSystem.Services
 {
-    public class StudentService : CrudAppService<
+    public class StudentAppService : CrudAppService<
         Student, //The Book entity
         StudentDto, //Used to show books
         int, //Primary key of the book entity
         PagedAndSortedResultRequestDto, //Used for paging/sorting
         StudentCreateUpdateDto>, //Used to create/update a book
-    IStudentService //implement the IBookAppService
+    IStudentAppService //implement the IBookAppService
     {
-        public StudentService(IRepository<Student, int> repository)
+        public StudentAppService(IRepository<Student, int> repository)
         : base(repository)
         {
 

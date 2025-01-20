@@ -7,7 +7,7 @@ using Volo.Abp.Application.Services;
 
 namespace Acme.StudentManagementSystem.Services
 {
-    public interface IStudentService : ICrudAppService< //Defines CRUD methods
+    public interface IStudentAppService : ICrudAppService< //Defines CRUD methods
         StudentDto, //Used to show books
         int, //Primary key of the book entity
         PagedAndSortedResultRequestDto, //Used for paging/sorting
