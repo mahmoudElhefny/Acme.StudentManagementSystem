@@ -10,4 +10,5 @@ export interface StudentDto extends AuditedEntityDto<number> {
   name?: string;
   age: number;
   gradeName: string;
+  gradeId:number
 }

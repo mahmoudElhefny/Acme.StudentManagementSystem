@@ -15,7 +15,7 @@ namespace Acme.StudentManagementSystem.Dto
 
             RuleFor(s => s.Age)
             .NotEmpty().WithMessage("Age is required.")
-            .InclusiveBetween(12, 18).WithMessage("Age must be between 12 and 18.");
+            .InclusiveBetween(5, 18).WithMessage("Age must be between 12 and 18.");
 
             RuleFor(s => s.GradeId)
             .NotEmpty().WithMessage("Grade is required.");
